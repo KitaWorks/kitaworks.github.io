@@ -1,56 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
     <title>KitaWorks Team</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body link="#0000FF" vlink="#800080" alink="#FF0000">
-<div id="header">
-    <div class="logo-container">
-        <img src="logo.gif" width="65" height="50" alt="Logo" border="0">
+<body>
+<div class="background-overlay"></div>
+
+<div class="glass-decoration decoration-1"></div>
+<div class="glass-decoration decoration-2"></div>
+
+<div class="floating-balls">
+    <div class="ball" style="width: 80px; height: 80px; top: 30%; left: 15%; animation-duration: 18s;"></div>
+    <div class="ball" style="width: 60px; height: 60px; top: 65%; left: 80%; animation-duration: 12s;"></div>
+    <div class="ball" style="width: 100px; height: 100px; top: 15%; left: 75%; animation-duration: 22s;"></div>
+    <div class="ball" style="width: 40px; height: 40px; top: 80%; left: 25%; animation-duration: 10s;"></div>
+</div>
+
+<div class="header-glass glass">
+    <div class="logo">
+        <img src="logo.png" alt="Studio Logo">
     </div>
-    <div class="title-container">
-        <font face="Arial" size="6" color="#FFFFFF"><b>KitaWorks Team</b></font>
+    <div class="studio-title">KitaWorks Team</div>
+</div>
+
+<div class="nav-glass glass">
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button">
+            <i class="fas fa-home"></i>
+            <span>主页</span>
+        </a>
+        <a href="products.html" class="nav-button">
+            <i class="fas fa-box-open"></i>
+            <span>产品列表</span>
+        </a>
+        <a href="join.html" class="nav-button">
+            <i class="fas fa-users"></i>
+            <span>加入我们</span>
+        </a>
+        <a href="about.html" class="nav-button">
+            <i class="fas fa-info-circle"></i>
+            <span>关于我们</span>
+        </a>
     </div>
 </div>
 
-<div id="container">
-    <div id="sidebar">
-        <a href="index.html" class="nav-link">主页</a>
-        <a href="products.html" class="nav-link">产品列表</a>
-        <a href="https://github.com/KitaWorks" class="nav-link">GitHub</a>
-        <a href="friends.html" class="nav-link">友情链接</a>
-        <a href="join.html" class="nav-link">加入我们</a>
-        <a href="about.html" class="nav-link">关于我们</a>
+<div class="content-glass glass">
+    <h1>加入我们</h1>
 
-    </div>
+    <p>您如果想加入此团队，可以:</p>
 
-    <div id="main-content">
-        <h1>加入我们</h1>
+    <ul>
+        <li>通过邮件联系我们，邮箱地址是 <a href="mailto:kitahashisakura@outlook.com">kitahashisakura@outlook.com</a></li>
+        <li>加入此 Matrix 聊天室 <a href="https://matrix.to/#/#kitaworks:matrix.org">Matrix</a></li>
+    </ul>
 
-        <p>您如果想加入此团队，可以:</p>
+    <p>我们欢迎任何人加入我们的团队，您可以是任何人，无论实力如何。</p>
+    <p><del>当然留在 Matrix 聊天室里闲聊也可以</del></p>
+</div>
 
-        <ul>
-            <li>通过邮件联系我们，邮箱地址是 <a href="mailto:kitahashisakura@outlook.com">kitahashisakura@outlook.com</a></li>
-            <li>加入此 Matrix 聊天室 <a href="https://matrix.to/#/#kitaworks:matrix.org">Matrix</a></li>
-        </ul>
-
-        <p>我们欢迎任何人加入我们的团队，您可以是任何人，无论实力如何。</p>
-        <p><del>当然留在 Matrix 聊天室里闲聊也可以</del></p>
+<div class="footer-glass glass">
+    <div class="footer-content">
+        <div>2025 KitaWorks Team. 推荐现代浏览器浏览以获得最佳体验.</div>
+        <div class="social-links">
+            <a href="oldsite/index.html"><i class="fab fa-history"></i></a>
+            <a href="https://github.com/KitaWorks"><i class="fab fa-github"></i></a>
+        </div>
+        <div>kitahashisakura@outlook.com</div>
     </div>
 </div>
 
-<div id="footer">
-    <table width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-            <td align="center">
-                <font face="Arial" size="2" color="#808080">
-                    2025 KitaWorks Team<br>
-                </font>
-            </td>
-        </tr>
-    </table>
-</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const floatingBalls = document.querySelector('.floating-balls');
+        const colors = ['rgba(255,255,255,0.1)', 'rgba(200,230,255,0.1)', 'rgba(220,240,255,0.1)'];
+
+        for (let i = 0; i < 8; i++) {
+            const ball = document.createElement('div');
+            ball.classList.add('ball');
+
+            const size = Math.random() * 40 + 20;
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const duration = Math.random() * 15 + 10;
+            const delay = Math.random() * 5;
+            const colorIndex = Math.floor(Math.random() * colors.length);
+
+            ball.style.width = `${size}px`;
+            ball.style.height = `${size}px`;
+            ball.style.top = `${top}%`;
+            ball.style.left = `${left}%`;
+            ball.style.background = colors[colorIndex];
+            ball.style.animationDuration = `${duration}s`;
+            ball.style.animationDelay = `${delay}s`;
+
+            floatingBalls.appendChild(ball);
+        }
+    });
+</script>
 </body>
 </html>
