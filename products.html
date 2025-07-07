@@ -72,19 +72,19 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const floatingBalls = document.querySelector('.floating-balls');
-        const colors = ['rgba(255,255,255,0.1)', 'rgba(200,230,255,0.1)', 'rgba(220,240,255,0.1)'];
+        var floatingBalls = document.querySelector('.floating-balls');
+        var colors = ['rgba(255,255,255,0.1)', 'rgba(200,230,255,0.1)', 'rgba(220,240,255,0.1)'];
 
-        for (let i = 0; i < 8; i++) {
-            const ball = document.createElement('div');
+        for (var i = 0; i < 8; i++) {
+            var ball = document.createElement('div');
             ball.classList.add('ball');
 
-            const size = Math.random() * 40 + 20;
-            const top = Math.random() * 100;
-            const left = Math.random() * 100;
-            const duration = Math.random() * 15 + 10;
-            const delay = Math.random() * 5;
-            const colorIndex = Math.floor(Math.random() * colors.length);
+            var size = Math.random() * 40 + 20;
+            var top = Math.random() * 100;
+            var left = Math.random() * 100;
+            var duration = Math.random() * 15 + 10;
+            var delay = Math.random() * 5;
+            var colorIndex = Math.floor(Math.random() * colors.length);
 
             ball.style.width = `${size}px`;
             ball.style.height = `${size}px`;
