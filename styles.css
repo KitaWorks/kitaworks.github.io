@@ -23,6 +23,11 @@ body {
     min-width: 1200px;
 }
 
+a {
+    color: antiquewhite;
+}
+
+
 .glass {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
